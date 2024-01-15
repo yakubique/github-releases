@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/yakubique/npm-versions.git"
+    "url": "git+https://github.com/yakubique/github-releases.git"
   },
   "keywords": [
     "npm",
