@@ -1,0 +1,38 @@
+{
+  "name": "github-releases",
+  "version": "1.0.0",
+  "description": "Get list of GitHub releases for repository",
+  "main": "action/index.js",
+  "scripts": {
+    "test": "yarn build && node ./action/index.js",
+    "build": "yarn clean && tsc --project ./tsconfig.json",
+    "clean": "rimraf -- action",
+    "release": "yarn clean && ncc build -m src/index.ts -o action --license LICENSE"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yakubique/npm-versions.git"
+  },
+  "keywords": [
+    "npm",
+    "github",
+    "action",
+    "versions"
+  ],
+  "author": "Vladimir <opa-oz>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yakubique/github-releases/issues"
+  },
+  "homepage": "https://github.com/yakubique/github-releases#readme",
+  "dependencies": {
+    "@actions/core": "^1.10.1",
+    "@actions/github": "^6.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.1",
+    "@vercel/ncc": "^0.38.1",
+    "rimraf": "^5.0.5",
+    "typescript": "^5.3.3"
+  }
+}

@@ -1,0 +1,28 @@
+name: github-releases
+description: Get list of GitHub releases for repository
+author: Vladimir Levin
+branding:
+  icon: tag
+  color: purple
+inputs:
+  repository:
+    description: 'Repository to get releases from (example: "yakubique/github-releases")'
+    required: true
+  pre:
+    description: Include the pre-releases
+    required: false
+  debug:
+    description: Be verbal
+    required: false
+  details:
+    description: Add publication date, name and prerelease status to return values
+    required: false
+  sort:
+    description: 'Sort releases by publication date ["ASC", "DESC"] (default :"ASC")'
+    default: 'ASC'
+outputs:
+  releases: # id of output
+    description: JSON list of releases
+runs:
+  using: 'node20'
+  main: 'action/index.js'
