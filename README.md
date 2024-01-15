@@ -7,7 +7,7 @@ Get list of GitHub releases for repository
 For live examples, please see [actions](https://github.com/yakubique/github-releases/actions/workflows/test-myself.yaml)
 
 ```yaml
-uses: yakubique/github-releases@1.0.0
+uses: yakubique/github-releases@v1
 env:
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 with:
@@ -17,7 +17,7 @@ with:
 ## With pre-releases
 
 ```yaml
-uses: yakubique/github-releases@1.0.0
+uses: yakubique/github-releases@v1
 env:
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 with:
@@ -28,19 +28,19 @@ with:
 ## Sort versions
 
 ```yaml
-uses: yakubique/github-releases@1.0.0
+uses: yakubique/github-releases@v1
 env:
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 with:
   repository: yakubique/orogene
-  sortVersions: 'desc'
+  sort: 'desc'
 ```
 
 ## Use output
 
 ```yaml
 steps:
-  - uses: yakubique/github-releases@1.0.0
+  - uses: yakubique/github-releases@v1
     id: get_releases
     env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

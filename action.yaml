@@ -1,4 +1,4 @@
-name: github-releases
+name: list-github-releases
 description: Get list of GitHub releases for repository
 author: Vladimir Levin
 branding:

@@ -51,7 +51,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           repository: yakubique/orogene
-          sortVersions: 'desc'
+          sort: 'desc'
       - name: Echo output
         run: |
           echo "${{ steps.get_releases.outputs.releases }}"
