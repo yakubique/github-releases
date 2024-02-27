@@ -2,12 +2,14 @@
 
 Get list of GitHub releases for repository
 
+[![Test `github-releases` action](https://github.com/yakubique/github-releases/actions/workflows/test-myself.yaml/badge.svg)](https://github.com/yakubique/github-releases/actions/workflows/test-myself.yaml)
+
 ## Usage
 
 For live examples, please see [actions](https://github.com/yakubique/github-releases/actions/workflows/test-myself.yaml)
 
 ```yaml
-uses: yakubique/github-releases@v1
+uses: yakubique/github-releases@v1.2
 env:
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 with:
@@ -17,7 +19,7 @@ with:
 ## With pre-releases
 
 ```yaml
-uses: yakubique/github-releases@v1
+uses: yakubique/github-releases@v1.2
 env:
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 with:
@@ -28,7 +30,7 @@ with:
 ## Sort versions
 
 ```yaml
-uses: yakubique/github-releases@v1
+uses: yakubique/github-releases@v1.2
 env:
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 with:
@@ -40,7 +42,7 @@ with:
 
 ```yaml
 steps:
-  - uses: yakubique/github-releases@v1
+  - uses: yakubique/github-releases@v1.2
     id: get_releases
     env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -52,23 +54,20 @@ steps:
 
 ## Inputs
 
-### `repository`
+<!-- AUTO-DOC-INPUT:START - Do not remove or modify this section -->
 
-**Required** Repository to get releases from (_example_: `"yakubique/github-releases"`).
+|   INPUT    |  TYPE  | REQUIRED | DEFAULT |                               DESCRIPTION                               |
+|------------|--------|----------|---------|-------------------------------------------------------------------------|
+|   debug    | string |  false   |         |                                Be verbal                                |
+|  details   | string |  false   |         | Add publication date, name and prerelease <br>status to return values   |
+|    pre     | string |  false   |         |                        Include the pre-releases                         |
+| repository | string |   true   |         | Repository to get releases from (example: "yakubique/github-releases")  |
+|    sort    | string |  false   | `"ASC"` | Sort releases by publication date ["ASC", <br>"DESC"] (default :"ASC")  |
 
-### `pre`
+<!-- AUTO-DOC-INPUT:END -->
 
-_Optional_ Include the pre-releases (_default_: `"false"`)
 
-### `sort`
-
-_Optional_ Sort releases by publication date `["ASC", "DESC"]` (_default_: `"ASC"`)
-
-### `debug`
-
-_Optional_ Be verbal (_default_: `'false'`)
-
-### `details`
+### About `details`
 
 _Optional_ Add publication date, name and prerelease status to return values (_default_: `'false'`)
 
@@ -134,6 +133,15 @@ If `true`:
 
 ## Outputs
 
-### `releases`
+<!-- AUTO-DOC-OUTPUT:START - Do not remove or modify this section -->
 
-Package's releases
+|  OUTPUT  |  TYPE  |      DESCRIPTION      |
+|----------|--------|-----------------------|
+| releases | string | JSON list of releases |
+
+<!-- AUTO-DOC-OUTPUT:END -->
+
+
+----
+
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/S6S1UZ9P7)

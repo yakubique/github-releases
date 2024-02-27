@@ -20,6 +20,7 @@ jobs:
       - name: Echo output
         run: |
           echo "${{ steps.get_releases.outputs.releases }}"
+          test "${{ steps.get_releases.outputs.releases }}" = "[v0.3.26,v0.3.22,v0.3.23,v0.3.25,v0.3.31,v0.3.34]"
 
   test-detailed:
     runs-on: [ "ubuntu-latest" ]
@@ -38,6 +39,7 @@ jobs:
       - name: Echo output
         run: |
           echo "${{ steps.get_releases.outputs.releases }}"
+          test "${{ steps.get_releases.outputs.releases }}" = "[{name:v0.3.26,tag_name:v0.3.26,prerelease:false,published_at:2023-08-07T09:43:28Z},{name:v0.3.22,tag_name:v0.3.22,prerelease:false,published_at:2023-11-12T10:58:00Z},{name:v0.3.23,tag_name:v0.3.23,prerelease:false,published_at:2023-11-12T10:59:27Z},{name:v0.3.25,tag_name:v0.3.25,prerelease:false,published_at:2023-11-12T11:01:20Z},{name:v0.3.31,tag_name:v0.3.31,prerelease:false,published_at:2023-11-12T11:17:17Z},{name:v0.3.34,tag_name:v0.3.34,prerelease:false,published_at:2023-11-12T11:21:59Z}]"
 
   test-sorted:
     runs-on: [ "ubuntu-latest" ]
@@ -55,3 +57,4 @@ jobs:
       - name: Echo output
         run: |
           echo "${{ steps.get_releases.outputs.releases }}"
+          test "${{ steps.get_releases.outputs.releases }}" = "[v0.3.34,v0.3.31,v0.3.25,v0.3.23,v0.3.22,v0.3.26]"
